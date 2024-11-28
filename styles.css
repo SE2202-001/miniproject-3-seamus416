@@ -1,0 +1,40 @@
+#section2 {
+    display: flex;                /* Align items in a row (side by side) */
+    gap: 20px;                    /* Add some space between the forms */
+    align-items: center;          /* Vertically align the items in the center */
+}
+
+form {
+    display: flex;                /* Flexbox inside each form for alignment */ 
+}
+
+label {
+    margin-bottom: 5px;           /* Add some space between label and select */
+}
+#section4 {
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+#array-list{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+button:hover {
+    background-color: grey; /* Change background color to grey on hover */
+}
+
