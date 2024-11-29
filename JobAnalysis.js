@@ -154,7 +154,7 @@ fileInput.addEventListener("change", async (event) => {
 
 
   function filter(level, type, skill){
-    currentJobs.length = 0;
+      currentJobs.length = 0;
     jobsArray.forEach((job) => {
         // Check if job matches all selected filter criteria
         const matchesLevel = level === "All" || job.level === level;
@@ -167,6 +167,8 @@ fileInput.addEventListener("change", async (event) => {
         }
       });
       displayJobs(currentJobs);
+    
+    
 
   }
 
@@ -199,4 +201,40 @@ fileInput.addEventListener("change", async (event) => {
     const skill = document.getElementById("dropdown3").value;
 
     filter(level, type, skill); // Call the filter function with selected values
+  });
+
+
+
+function sort(type){
+  let sortedJobs = [...currentJobs];
+    if(currentJobs.length == 0){
+      sortedJobs = [...jobsArray];
+    }
+    switch(type){
+      case "Title(A-Z)":
+        sortedJobs.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+      case "Title(Z-A)":
+        sortedJobs.sort((a, b) => b.title.localeCompare(a.title));
+      break;
+      case  "Date Posted(newest first)":
+        break;
+      case "Date Posted(oldest first)":
+        sortedJobs.reverse();
+        break;
+      default:
+        break;
+    }
+    displayJobs(sortedJobs);
+
+  }
+
+
+  const sortBtn = document.getElementById("sort-btn");
+
+  sortBtn.addEventListener("click", () => {
+    // Get selected values from dropdowns
+    const type = document.getElementById("dropdown4").value;
+
+    sort(type);
   });
