@@ -1,79 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding and viewport settings for responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the page displayed on the browser tab -->
     <title>Job Analysis</title>
+    
+    <!-- External JavaScript file linked with defer to load after HTML content -->
     <script src="JobAnalysis.js" defer></script>
+    
+    <!-- External CSS file for styling the page -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header section containing the title of the page -->
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Job Analysis</h1>
     </header>
 
+    <!-- Main content area of the page -->
     <main>
+        
+        <!-- Section for uploading a job data file and displaying errors if any -->
         <section id="section1">
+            <!-- File input to allow the user to upload a .json file -->
             <input type="file" id="file-input" accept=".json">
+            
+            <!-- Paragraph to display error messages related to file input -->
             <p id="error-message" class="error" style="display: none;"></p>
+            
+            <!-- Div to display the list of jobs after file is processed -->
             <div id="job-list"></div>
         </section>
         
+        <!-- Section for filtering jobs based on level, type, and skill -->
         <section id="section2">
+            <!-- Form to filter jobs by level -->
             <form>
-                <label for = "levelfilter">Filter by level: </label>
-                <select id="dropdown1" name = "levelfilter">
-                    <option value="All">All</option>
-                    <option value= "Entry level">Entry level</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Expert">Expert</option>
-                </select>
+                <label for="levelfilter">Filter by level: </label>
+                <select id="dropdown1" name="levelfilter"></select>
             </form>
+            
+            <!-- Form to filter jobs by type -->
             <form>
-                <label for = "typefilter">Filter by type: </label>
-                <select id="dropdown2" name = "typefilter">
-                    <option value="All">All</option>
-                    <option value="Ongoing project">Ongoing project</option>
-                    <option value="One-time project">One-time project</option>
-                    <option value="Complex project">Complex project</option>
-                </select>
+                <label for="typefilter">Filter by type: </label>
+                <select id="dropdown2" name="typefilter"></select>
             </form>
+            
+            <!-- Form to filter jobs by skill -->
             <form>
-                <label for = "skillfilter">Filter by skill: </label>
-                <select id="dropdown3" name = "skillfilter">
-                    <option value="All">All</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    <option value="option4">Option 4</option>
-                </select>
+                <label for="skillfilter">Filter by skill: </label>
+                <select id="dropdown3" name="skillfilter"></select>
             </form>
+            
+            <!-- Button to trigger the filtering of jobs based on selected criteria -->
             <button type="button" id="filter-btn">Filter</button>
         </section>
         
-
-        <section id = "section3">
+        <!-- Section for sorting jobs by title or date -->
+        <section id="section3">
+            <!-- Form to select sorting criteria for jobs -->
             <form>
                 <label for="sort">Sort by: </label>
                 <select id="dropdown4" name="sort">
+                    <!-- Options for sorting by title (A-Z or Z-A) or by date -->
                     <option value="Title(A-Z)">Title(A-Z)</option>
                     <option value="Title(Z-A)">Title(Z-A)</option>
                     <option value="Date Posted(newest first)">Date Posted(newest first)</option>
                     <option value="Date Posted(oldest first)">Date Posted(oldest first)</option>
                 </select>
+                
+                <!-- Button to trigger sorting of jobs based on selected criteria -->
                 <button type="button" id="sort-btn">Sort</button>
             </form>
-
         </section>
 
-        <section id = "section4">
+        <!-- Section to display the list of jobs or any relevant information after sorting/filtering -->
+        <section id="section4">
+            <!-- Div to display the array of jobs or other data -->
             <div id="array-list"></div>
         </section>
-        
 
     </main>
-
-    <footer id="footer">
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-    </footer>
 </body>
 </html>

@@ -1,40 +1,45 @@
+/* Section containing filters: Align the filter forms side by side */
 #section2 {
     display: flex;                /* Align items in a row (side by side) */
     gap: 20px;                    /* Add some space between the forms */
     align-items: center;          /* Vertically align the items in the center */
 }
 
+/* Each form inside section2 uses flexbox for alignment */
 form {
-    display: flex;                /* Flexbox inside each form for alignment */ 
+    display: flex;                /* Flexbox inside each form for alignment */
 }
 
+/* Style for the labels inside the forms */
 label {
     margin-bottom: 5px;           /* Add some space between label and select */
 }
+
+/* Section for displaying job list (flex column layout) */
 #section4 {
     display: flex;
-    flex-direction: column;
-    
-
+    flex-direction: column;       /* Stack elements in a vertical direction */
 }
 
+/* Array list container to display the list of jobs */
 #array-list{
     display: flex;
-    flex-direction: column;
-    color: white;
+    flex-direction: column;       /* Stack job buttons vertically */
+    color: white;                 /* Set the text color to white */
 }
 
+/* Button styling */
 button {
-    background-color: white;
-    color: black;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 5px;
-    cursor: pointer;
-    text-align: left;
+    background-color: white;      /* Set the background color to white */
+    color: black;                 /* Set text color to black */
+    border: 1px solid #ccc;       /* Add a light gray border */
+    padding: 10px;                /* Add padding inside the button */
+    margin: 5px;                  /* Add margin between buttons */
+    cursor: pointer;             /* Change cursor to pointer on hover */
+    text-align: left;             /* Align button text to the left */
 }
 
+/* Hover effect for buttons */
 button:hover {
-    background-color: grey; /* Change background color to grey on hover */
+    background-color: grey;      /* Change background color to grey on hover */
 }
-
